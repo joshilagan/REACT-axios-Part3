@@ -1,7 +1,7 @@
 // Import React, useState, useEffect, axios and Parser
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Parser } from "html-to-react";
+import Cards from './components/Cards';
 
 // Define the API endpoint
 const API_URL = 'https://api.tvmaze.com/schedule';
@@ -30,12 +30,18 @@ const App = () => {
       {posts.length > 0 ? (
         <div className="content">
           {posts.map((post) => (
-            <div className="post" key={post.id}>
-              <h2>{post.show.name}</h2>
-              {/* convert html strings to react elements */}
-              <p>{Parser().parse(post.show.summary)}</p>
-              <img src={post.show.image.medium} alt="" />
-            </div>
+            <Cards 
+            key={post.id}
+            name={post.show.name}
+            summary={post.show.summary}
+            pic={post.show.image.medium}
+            />
+            // <div className="post" key={post.id}>
+            //   <h2>{post.show.name}</h2>
+            //   {/* convert html strings to react elements */}
+            //   <p>{Parser().parse(post.show.summary)}</p>
+            //   <img src={post.show.image.medium} alt="" />
+            // </div>
           ))}
         </div>
       ) : (
