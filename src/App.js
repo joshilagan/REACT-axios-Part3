@@ -1,4 +1,5 @@
 // Import React, useState, useEffect, axios and Parser
+import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cards from './components/Cards';

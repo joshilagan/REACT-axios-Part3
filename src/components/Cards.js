@@ -1,6 +1,7 @@
 import React from 'react'
 import { Parser } from "html-to-react";
 
+
 const Cards = (props) => {
   // create a new Parser instance
   const parser = new Parser();
@@ -9,10 +10,10 @@ const Cards = (props) => {
   return (
     
       <div className="post" key={props.id}>
-              <h2>{props.name}</h2>
+              <img src={props.pic} alt="show" className='imgCard'/>
+              <h2 className='cardName'>{props.name}</h2>
               {/* render the react element */}
-              <p>{summaryElement}</p>
-              <img src={props.pic} alt="" />
+              <p className='cardSummary'>{summaryElement}</p>
       </div>
     
   )
